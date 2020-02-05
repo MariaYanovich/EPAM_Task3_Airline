@@ -5,57 +5,53 @@ import by.training.task3.airline.enums.PlaneTypes;
 import java.util.Objects;
 
 public abstract class Plane {
-    private static final int DEFAULT_ID = 0;
-    private static final int DEFAULT_PASSENGER_CAPACITY = 2;
-    private static final double DEFAULT_MAXIMUM_TAKE_OF_WEIGHT = 4700;
-    private static final double DEFAULT_MAXIMUM_SPEED = 900;
-    private static final double DEFAULT_PRACTICAL_FLIGHT_DISTANCE = 1015;
-    private static final double DEFAULT_WEIGHT_OF_EMPTY_PLANE = 3395;
 
-    private int id;
-    private int passengerCapacity;
-    private double maximumTakeoffWeight;
-    private double maximumSpeed;
-    private double practicalFlightDistance;
-    private double weightOfEmptyPlane;
+    protected static final int DEFAULT_ID = 0;
+    protected static final int DEFAULT_PASSENGER_CAPACITY = 2;
+    protected static final double DEFAULT_TAKEOFF_WEIGHT = 4700;
+    protected static final double DEFAULT_SPEED = 900;
+    protected static final double DEFAULT_FLIGHT_DISTANCE = 1015;
+
+    protected int id;
+    protected int passengerCapacity;
+    protected double takeoffWeight;
+    protected double speed;
+    protected double flightDistance;
     protected PlaneTypes typeOfPlane;
-
 
     public Plane() {
         this.id = DEFAULT_ID;
         this.passengerCapacity = DEFAULT_PASSENGER_CAPACITY;
-        this.maximumTakeoffWeight = DEFAULT_MAXIMUM_TAKE_OF_WEIGHT;
-        this.maximumSpeed = DEFAULT_MAXIMUM_SPEED;
-        this.practicalFlightDistance = DEFAULT_PRACTICAL_FLIGHT_DISTANCE;
-        this.weightOfEmptyPlane = DEFAULT_WEIGHT_OF_EMPTY_PLANE;
+        this.takeoffWeight = DEFAULT_TAKEOFF_WEIGHT;
+        this.speed = DEFAULT_SPEED;
+        this.flightDistance = DEFAULT_FLIGHT_DISTANCE;
     }
 
-    public Plane(int id, PlaneTypes typeOfPlane, int passengerCapacity, double maximumTakeoffWeight,
-                 double maximumSpeed, double practicalFlightDistance, double weightOfEmptyPlane) {
+    public Plane(int id, PlaneTypes typeOfPlane, int passengerCapacity, double takeoffWeight,
+                 double speed, double flightDistance) {
         this.id = id;
         this.typeOfPlane = typeOfPlane;
         this.passengerCapacity = passengerCapacity;
-        this.maximumTakeoffWeight = maximumTakeoffWeight;
-        this.maximumSpeed = maximumSpeed;
-        this.practicalFlightDistance = practicalFlightDistance;
-        this.weightOfEmptyPlane = weightOfEmptyPlane;
+        this.takeoffWeight = takeoffWeight;
+        this.speed = speed;
+        this.flightDistance = flightDistance;
 
     }
 
-    public double getMaximumSpeed() {
-        return maximumSpeed;
+    public double getSpeed() {
+        return speed;
     }
 
-    public void setMaximumSpeed(double maximumSpeed) {
-        this.maximumSpeed = maximumSpeed;
+    public void setSpeed(double speed) {
+        this.speed = speed;
     }
 
-    public double getMaximumTakeoffWeight() {
-        return maximumTakeoffWeight;
+    public double getTakeoffWeight() {
+        return takeoffWeight;
     }
 
-    public void setMaximumTakeoffWeight(double maximumTakeoffWeight) {
-        this.maximumTakeoffWeight = maximumTakeoffWeight;
+    public void setTakeoffWeight(double takeoffWeight) {
+        this.takeoffWeight = takeoffWeight;
     }
 
     public int getPassengerCapacity() {
@@ -66,12 +62,12 @@ public abstract class Plane {
         this.passengerCapacity = passengerCapacity;
     }
 
-    public double getPracticalFlightDistance() {
-        return practicalFlightDistance;
+    public double getFlightDistance() {
+        return flightDistance;
     }
 
-    public void setPracticalFlightDistance(double practicalFlightDistance) {
-        this.practicalFlightDistance = practicalFlightDistance;
+    public void setFlightDistance(double flightDistance) {
+        this.flightDistance = flightDistance;
     }
 
     public PlaneTypes getTypeOfPlane() {
@@ -80,14 +76,6 @@ public abstract class Plane {
 
     public void setTypeOfPlane(PlaneTypes typeOfPlane) {
         this.typeOfPlane = typeOfPlane;
-    }
-
-    public double getWeightOfEmptyPlane() {
-        return weightOfEmptyPlane;
-    }
-
-    public void setWeightOfEmptyPlane(double weightOfEmptyPlane) {
-        this.weightOfEmptyPlane = weightOfEmptyPlane;
     }
 
     public int getId() {
@@ -105,30 +93,26 @@ public abstract class Plane {
         Plane plane = (Plane) o;
         return getId() == plane.getId() &&
                 getPassengerCapacity() == plane.getPassengerCapacity() &&
-                Double.compare(plane.getMaximumTakeoffWeight(), getMaximumTakeoffWeight()) == 0 &&
-                Double.compare(plane.getMaximumSpeed(), getMaximumSpeed()) == 0 &&
-                Double.compare(plane.getPracticalFlightDistance(), getPracticalFlightDistance()) == 0 &&
-                Double.compare(plane.getWeightOfEmptyPlane(), getWeightOfEmptyPlane()) == 0 &&
+                Double.compare(plane.getTakeoffWeight(), getTakeoffWeight()) == 0 &&
+                Double.compare(plane.getSpeed(), getSpeed()) == 0 &&
+                Double.compare(plane.getFlightDistance(), getFlightDistance()) == 0 &&
                 getTypeOfPlane() == plane.getTypeOfPlane();
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getPassengerCapacity(),
-                getMaximumTakeoffWeight(), getMaximumSpeed(),
-                getPracticalFlightDistance(), getWeightOfEmptyPlane(),
-                getTypeOfPlane());
+                getTakeoffWeight(), getSpeed(),
+                getFlightDistance(), getTypeOfPlane());
     }
 
     @Override
     public String toString() {
-        return "Plane{" +
-                "id=" + id +
+        return "PlaneID-" + id +
+                ": typeOfPlane=" + typeOfPlane +
                 ", passengerCapacity=" + passengerCapacity +
-                ", maximumTakeoffWeight=" + maximumTakeoffWeight +
-                ", maximumSpeed=" + maximumSpeed +
-                ", practicalFlightDistance=" + practicalFlightDistance +
-                ", weightOfEmptyPlane=" + weightOfEmptyPlane +
-                ", typeOfPlane=" + typeOfPlane;
+                ", takeoffWeight=" + takeoffWeight +
+                ", speed=" + speed +
+                ", flightDistance=" + flightDistance;
     }
 }

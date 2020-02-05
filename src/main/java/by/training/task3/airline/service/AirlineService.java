@@ -11,19 +11,21 @@ public interface AirlineService {
 
     void updatePlane(Plane oldPlane, Plane newPlane);
 
-    boolean searchPlane(Plane plane);
-
     ArrayList<Plane> getAllPlanes();
+
+    ArrayList<Plane> getPlaneById(int id);
 
     ArrayList<Plane> getPlaneFromPassengerCapacityRange(int startOfRange, int endOfRange);
 
-    Plane findPlaneWithMaxSpeed();
+    ArrayList<Plane> findPlaneWithMaxSpeed();
+
+    ArrayList<Plane> sortByFlightDistance();
+
+    ArrayList<Plane> sortByFlightDistanceAndTypeOfPlane();
 
     int sumAllPassengerCapacity();
 
-    double sumAllMaximumTakeOffWeight();
+    double sumAllTakeoffWeight();
 
-    ArrayList<Plane> sortByPracticalFlightDistance();
 
-    ArrayList<Plane> sortByPracticalFlightDistanceAndTypeOfPlane();
 }

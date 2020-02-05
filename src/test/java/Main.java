@@ -7,6 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         AirlineServiceImpl airlineServiceImplementation = new AirlineServiceImpl();
-        airlineServiceImplementation.sortByPracticalFlightDistanceAndTypeOfPlane();
+//        for (Plane plane : airlineServiceImplementation.sortByFlightDistance()) {
+//            System.out.println(plane);
+//        }
+//        System.out.println(airlineServiceImplementation.findPlaneWithMaxSpeed());
+
+        System.out.println(airlineServiceImplementation.sumAllTakeoffWeight());
+        System.out.println(airlineServiceImplementation.getPlaneById(9));
+        airlineServiceImplementation.sortByFlightDistance();
     }
 }

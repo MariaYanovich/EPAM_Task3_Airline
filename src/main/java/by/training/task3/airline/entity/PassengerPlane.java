@@ -3,28 +3,28 @@ package by.training.task3.airline.entity;
 import by.training.task3.airline.enums.PassengerPlaneTypes;
 import by.training.task3.airline.enums.PlaneTypes;
 
-
 import java.util.Objects;
 
 public class PassengerPlane extends Plane {
+
     private static final int DEFAULT_NUMBER_OF_STEWARDS = 6;
+
     private int numberOfStewards;
     private PassengerPlaneTypes typeOfPassengerPlane;
 
     public PassengerPlane() {
         super();
-        super.typeOfPlane = PlaneTypes.PASSENGER_PLANE;
+        super.typeOfPlane = PlaneTypes.PASSENGER;
         this.numberOfStewards = DEFAULT_NUMBER_OF_STEWARDS;
         this.typeOfPassengerPlane = PassengerPlaneTypes.ECONOMY;
     }
 
     public PassengerPlane(int id, PlaneTypes typeOfPlane,
-                          int passengerCapacity, double maximumTakeoffWeight,
-                          double maximumSpeed, double practicalFlightDistance,
-                          double weightOfEmptyPlane, int numberOfStewards,
-                          PassengerPlaneTypes typeOfPassengerPlane) {
-        super(id, typeOfPlane, passengerCapacity, maximumTakeoffWeight,
-                maximumSpeed, practicalFlightDistance, weightOfEmptyPlane);
+                          int passengerCapacity, double takeoffWeight,
+                          double speed, double flightDistance,
+                          int numberOfStewards, PassengerPlaneTypes typeOfPassengerPlane) {
+        super(id, typeOfPlane, passengerCapacity, takeoffWeight,
+                speed, flightDistance);
         this.numberOfStewards = numberOfStewards;
         this.typeOfPassengerPlane = typeOfPassengerPlane;
     }
@@ -64,7 +64,6 @@ public class PassengerPlane extends Plane {
     public String toString() {
         return super.toString() +
                 ", numberOfStewards=" + numberOfStewards +
-                ", typeOfPassengerPlane=" + typeOfPassengerPlane +
-                '}';
+                ", typeOfPassengerPlane=" + typeOfPassengerPlane;
     }
 }

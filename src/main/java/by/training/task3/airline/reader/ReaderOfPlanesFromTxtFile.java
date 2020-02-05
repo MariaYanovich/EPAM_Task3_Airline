@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class ReaderOfPlanesFromTxtFile {
     private static Logger LOGGER = LogManager.getLogger(ReaderOfPlanesFromTxtFile.class.getName());
+
     private ArrayList<String> arrayListOfPlanesParameters;
     private String filename;
 
@@ -34,10 +35,10 @@ public class ReaderOfPlanesFromTxtFile {
             throws ReaderOfPlanesFromTxtFileException {
         try {
             if (!arrayListOfPlanesParameters.isEmpty()) {
-                LOGGER.debug("File isn't empty. Can initialize array list of strings");
+                LOGGER.info("File isn't empty. Can initialize array list of strings");
                 this.arrayListOfPlanesParameters = arrayListOfPlanesParameters;
             } else {
-                LOGGER.debug("File is empty. Can't initialize array list of strings");
+                LOGGER.error("File is empty. Can't initialize array list of strings");
                 throw new IOException();
             }
         } catch (IOException e) {
@@ -49,7 +50,7 @@ public class ReaderOfPlanesFromTxtFile {
     private ArrayList<String> readFromTxtFile() throws ReaderOfPlanesFromTxtFileException {
         try {
             if (new File(filename).exists()) {
-                LOGGER.debug("File exists");
+                LOGGER.info("File exists");
                 return new ArrayList<>(Files.readAllLines(Paths.get(filename)));
             } else {
                 LOGGER.error("File doesn't exist");
@@ -58,12 +59,5 @@ public class ReaderOfPlanesFromTxtFile {
         } catch (IOException e) {
             throw new ReaderOfPlanesFromTxtFileException();
         }
-    }
-
-    @Override
-    public String toString() {
-        return "ReaderOfPlanesFromTxtFile{" +
-                "arrayListOfPlanesParameters=" + arrayListOfPlanesParameters +
-                '}';
     }
 }
