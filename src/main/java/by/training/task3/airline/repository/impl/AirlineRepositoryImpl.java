@@ -21,8 +21,16 @@ public class AirlineRepositoryImpl implements AirlineRepository {
 
     private ArrayList<Plane> arrayListOfPlanes = new ArrayList<>();
 
-    public AirlineRepositoryImpl() {
+    private AirlineRepositoryImpl() {
         initializeRepository();
+    }
+
+    private static class AirlineRepositoryHolder {
+        private final static AirlineRepositoryImpl instance = new AirlineRepositoryImpl();
+    }
+
+    public static AirlineRepositoryImpl getInstance() {
+        return AirlineRepositoryHolder.instance;
     }
 
     private void initializeRepository() {

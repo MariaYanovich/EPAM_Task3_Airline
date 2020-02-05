@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class AirlineServiceImpl implements AirlineService {
 
-    private AirlineRepository repository = new AirlineRepositoryImpl();
+    private AirlineRepository repository = AirlineRepositoryImpl.getInstance();
 
     public void addPlane(Plane plane) {
         repository.addPlane(plane);
