@@ -1,6 +1,6 @@
 package by.training.task3.airline.entity;
 
-import by.training.task3.airline.enums.PlaneTypes;
+import by.training.task3.airline.enums.PlaneType;
 
 import java.util.Objects;
 
@@ -11,12 +11,12 @@ public abstract class Plane {
     protected double takeoffWeight;
     protected double speed;
     protected double flightDistance;
-    protected PlaneTypes typeOfPlane;
+    protected PlaneType typeOfPlane;
 
     public Plane() {
     }
 
-    public Plane(int id, PlaneTypes typeOfPlane, int passengerCapacity, double takeoffWeight,
+    public Plane(int id, PlaneType typeOfPlane, int passengerCapacity, double takeoffWeight,
                  double speed, double flightDistance) {
         this.id = id;
         this.typeOfPlane = typeOfPlane;
@@ -59,11 +59,11 @@ public abstract class Plane {
         this.flightDistance = flightDistance;
     }
 
-    public PlaneTypes getTypeOfPlane() {
+    public PlaneType getTypeOfPlane() {
         return typeOfPlane;
     }
 
-    public void setTypeOfPlane(PlaneTypes typeOfPlane) {
+    public void setTypeOfPlane(PlaneType typeOfPlane) {
         this.typeOfPlane = typeOfPlane;
     }
 

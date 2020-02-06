@@ -16,8 +16,4 @@ public interface AirlineRepository {
 
     ArrayList<Plane> query(PlaneSpecification specification);
 
-    int sumAllPassengerCapacity();
-
-    double sumAllTakeoffWeight();
-
 }

@@ -2,7 +2,6 @@ package by.training.task3.airline.service;
 
 import by.training.task3.airline.entity.PassengerPlane;
 import by.training.task3.airline.entity.Plane;
-
 import by.training.task3.airline.entity.TransportPlane;
 import by.training.task3.airline.service.impl.AirlineServiceImpl;
 import org.junit.Before;
@@ -10,19 +9,22 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static by.training.task3.airline.enums.PassengerPlaneTypes.*;
-import static by.training.task3.airline.enums.PlaneTypes.PASSENGER;
-import static by.training.task3.airline.enums.PlaneTypes.TRANSPORT;
-import static by.training.task3.airline.enums.TransportPlaneTypes.*;
-import static org.junit.Assert.*;
+import static by.training.task3.airline.enums.PassengerPlaneType.*;
+import static by.training.task3.airline.enums.PlaneType.PASSENGER;
+import static by.training.task3.airline.enums.PlaneType.TRANSPORT;
+import static by.training.task3.airline.enums.TransportPlaneType.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class AirlineServiceImplTest {
 
-    private AirlineService airlineService = new AirlineServiceImpl();
+    private AirlineService airlineService = AirlineServiceImpl.getInstance();
     private ArrayList<Plane> listOfAirlinePlanes = new ArrayList<>();
+
 
     @Before
     public void testInitializeExpectedArrayListOfPlanes() {
+
         listOfAirlinePlanes.add(new PassengerPlane(1, PASSENGER, 100, 3400, 900, 2000, 5, ECONOMY));
         listOfAirlinePlanes.add(new TransportPlane(2, TRANSPORT, 2, 5000, 950, 2500, 3.6, MILITARY));
         listOfAirlinePlanes.add(new PassengerPlane(3, PASSENGER, 80, 3470, 970, 2600, 5, BUSINESS));

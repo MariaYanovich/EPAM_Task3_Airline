@@ -1,6 +1,7 @@
 package by.training.task3.airline.enums;
 
-public enum PlaneTypes {
+public enum PlaneType {
     PASSENGER,
-    TRANSPORT
+    TRANSPORT,
+    DEFAULT
 }

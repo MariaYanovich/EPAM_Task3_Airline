@@ -1,35 +1,35 @@
 package by.training.task3.airline.entity;
 
-import by.training.task3.airline.enums.PlaneTypes;
-import by.training.task3.airline.enums.TransportPlaneTypes;
+import by.training.task3.airline.enums.PlaneType;
+import by.training.task3.airline.enums.TransportPlaneType;
 
 import java.util.Objects;
 
 public class TransportPlane extends Plane {
 
     private double volumeOfContainer;
-    private TransportPlaneTypes typeOfTransportPlane;
+    private TransportPlaneType typeOfTransportPlane;
 
     public TransportPlane() {
-        super.typeOfPlane = PlaneTypes.TRANSPORT;
+        super.typeOfPlane = PlaneType.TRANSPORT;
     }
 
 
-    public TransportPlane(int id, PlaneTypes typeOfPlane, int passengerCapacity,
+    public TransportPlane(int id, PlaneType typeOfPlane, int passengerCapacity,
                           double takeoffWeight, double speed,
                           double flightDistance, double volumeOfContainer,
-                          TransportPlaneTypes typeOfTransportPlane) {
+                          TransportPlaneType typeOfTransportPlane) {
         super(id, typeOfPlane, passengerCapacity,
                 takeoffWeight, speed, flightDistance);
         this.volumeOfContainer = volumeOfContainer;
         this.typeOfTransportPlane = typeOfTransportPlane;
     }
 
-    public TransportPlaneTypes getTypeOfTransportPlane() {
+    public TransportPlaneType getTypeOfTransportPlane() {
         return typeOfTransportPlane;
     }
 
-    public void setTypeOfTransportPlane(TransportPlaneTypes typeOfTransportPlane) {
+    public void setTypeOfTransportPlane(TransportPlaneType typeOfTransportPlane) {
         this.typeOfTransportPlane = typeOfTransportPlane;
     }
 

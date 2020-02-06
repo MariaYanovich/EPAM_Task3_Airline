@@ -1,7 +1,7 @@
 package by.training.task3.airline.entity;
 
-import by.training.task3.airline.enums.PassengerPlaneTypes;
-import by.training.task3.airline.enums.PlaneTypes;
+import by.training.task3.airline.enums.PassengerPlaneType;
+import by.training.task3.airline.enums.PlaneType;
 
 import java.util.Objects;
 
@@ -9,27 +9,27 @@ public class PassengerPlane extends Plane {
 
 
     private int numberOfStewards;
-    private PassengerPlaneTypes typeOfPassengerPlane;
+    private PassengerPlaneType typeOfPassengerPlane;
 
     public PassengerPlane() {
-        super.typeOfPlane = PlaneTypes.PASSENGER;
+        super.typeOfPlane = PlaneType.PASSENGER;
     }
 
-    public PassengerPlane(int id, PlaneTypes typeOfPlane,
+    public PassengerPlane(int id, PlaneType typeOfPlane,
                           int passengerCapacity, double takeoffWeight,
                           double speed, double flightDistance,
-                          int numberOfStewards, PassengerPlaneTypes typeOfPassengerPlane) {
+                          int numberOfStewards, PassengerPlaneType typeOfPassengerPlane) {
         super(id, typeOfPlane, passengerCapacity, takeoffWeight,
                 speed, flightDistance);
         this.numberOfStewards = numberOfStewards;
         this.typeOfPassengerPlane = typeOfPassengerPlane;
     }
 
-    public PassengerPlaneTypes getTypeOfPassengerPlane() {
+    public PassengerPlaneType getTypeOfPassengerPlane() {
         return typeOfPassengerPlane;
     }
 
-    public void setTypeOfPassengerPlane(PassengerPlaneTypes typeOfPassengerPlane) {
+    public void setTypeOfPassengerPlane(PassengerPlaneType typeOfPassengerPlane) {
         this.typeOfPassengerPlane = typeOfPassengerPlane;
     }
 

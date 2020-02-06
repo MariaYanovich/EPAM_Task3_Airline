@@ -9,13 +9,13 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static by.training.task3.airline.enums.PassengerPlaneTypes.BUSINESS;
-import static by.training.task3.airline.enums.PassengerPlaneTypes.ECONOMY;
-import static by.training.task3.airline.enums.PlaneTypes.PASSENGER;
-import static by.training.task3.airline.enums.PlaneTypes.TRANSPORT;
-import static by.training.task3.airline.enums.TransportPlaneTypes.CIVILIAN;
-import static by.training.task3.airline.enums.TransportPlaneTypes.MILITARY;
-import static org.junit.Assert.*;
+import static by.training.task3.airline.enums.PassengerPlaneType.BUSINESS;
+import static by.training.task3.airline.enums.PassengerPlaneType.ECONOMY;
+import static by.training.task3.airline.enums.PlaneType.PASSENGER;
+import static by.training.task3.airline.enums.PlaneType.TRANSPORT;
+import static by.training.task3.airline.enums.TransportPlaneType.CIVILIAN;
+import static by.training.task3.airline.enums.TransportPlaneType.MILITARY;
+import static org.junit.Assert.assertEquals;
 
 public class FindPlaneFromPassengerCapacityIntervalTest {
 

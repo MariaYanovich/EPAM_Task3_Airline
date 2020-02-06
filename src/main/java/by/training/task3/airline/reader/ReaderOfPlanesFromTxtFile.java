@@ -14,37 +14,17 @@ import java.util.ArrayList;
 public class ReaderOfPlanesFromTxtFile {
     private static Logger LOGGER = LogManager.getLogger(ReaderOfPlanesFromTxtFile.class.getName());
 
-    private ArrayList<String> arrayListOfPlanesParameters;
+    private ArrayList<String> arrayListOfPlanes;
     private String filename;
 
     public ReaderOfPlanesFromTxtFile() {
-        this.arrayListOfPlanesParameters = new ArrayList<>();
+        this.arrayListOfPlanes = new ArrayList<>();
         this.filename = ".\\src\\main\\resources\\Planes.txt";
         try {
-            setArrayListOfPlanesParameters(readFromTxtFile());
+            setArrayListOfPlanes(readFromTxtFile());
         } catch (ReaderOfPlanesFromTxtFileException e) {
             LOGGER.error("File is empty. Repository will be empty at start.");
         }
-    }
-
-    public ArrayList<String> getArrayListOfPlanesParameters() {
-        return arrayListOfPlanesParameters;
-    }
-
-    private void setArrayListOfPlanesParameters(ArrayList<String> arrayListOfPlanesParameters)
-            throws ReaderOfPlanesFromTxtFileException {
-        try {
-            if (!arrayListOfPlanesParameters.isEmpty()) {
-                LOGGER.info("File isn't empty. Can initialize array list of strings");
-                this.arrayListOfPlanesParameters = arrayListOfPlanesParameters;
-            } else {
-                LOGGER.error("File is empty. Can't initialize array list of strings");
-                throw new IOException();
-            }
-        } catch (IOException e) {
-            throw new ReaderOfPlanesFromTxtFileException();
-        }
-
     }
 
     private ArrayList<String> readFromTxtFile() throws ReaderOfPlanesFromTxtFileException {
@@ -60,4 +40,29 @@ public class ReaderOfPlanesFromTxtFile {
             throw new ReaderOfPlanesFromTxtFileException();
         }
     }
+
+    public String getStrWithPlane(int i) {
+        return arrayListOfPlanes.get(i);
+    }
+
+    public ArrayList<String> getArrayListOfPlanes() {
+        return arrayListOfPlanes;
+    }
+
+    private void setArrayListOfPlanes(ArrayList<String> arrayListOfPlanes)
+            throws ReaderOfPlanesFromTxtFileException {
+        try {
+            if (!arrayListOfPlanes.isEmpty()) {
+                LOGGER.info("File isn't empty. Can initialize array list of strings");
+                this.arrayListOfPlanes = arrayListOfPlanes;
+            } else {
+                LOGGER.error("File is empty. Can't initialize array list of strings");
+                throw new IOException();
+            }
+        } catch (IOException e) {
+            throw new ReaderOfPlanesFromTxtFileException();
+        }
+
+    }
 }
+

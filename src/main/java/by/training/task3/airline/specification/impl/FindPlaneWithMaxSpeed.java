@@ -19,7 +19,7 @@ public class FindPlaneWithMaxSpeed implements PlaneSpecification {
                 listToReturn.add(plane);
             }
         }
-        LOGGER.debug("Find plane with max speed is ended: "+ listToReturn);
+        LOGGER.debug("Find plane with max speed is ended: " + listToReturn);
         return listToReturn;
     }
 

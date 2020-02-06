@@ -30,7 +30,7 @@ public class FindPlaneFromPassengerCapacityInterval implements PlaneSpecificatio
             }
         }
 
-        LOGGER.debug("Find plane in interval is ended: "+ listToReturn);
+        LOGGER.debug("Find plane in interval is ended: " + listToReturn);
 
         return listToReturn;
     }
