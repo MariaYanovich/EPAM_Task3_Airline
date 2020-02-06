@@ -1,0 +1,1 @@
+[DEBUG] 2020-02-06 22:04:18.961 [main] FindPlaneById - Find plane by id is ended: [PlaneID-3: typeOfPlane=PASSENGER, passengerCapacity=80, takeoffWeight=3470.0, speed=970.0, flightDistance=2600.0, numberOfStewards=5, typeOfPassengerPlane=BUSINESS]
