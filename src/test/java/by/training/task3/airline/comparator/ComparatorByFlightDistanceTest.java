@@ -2,6 +2,7 @@ package by.training.task3.airline.comparator;
 
 import by.training.task3.airline.entity.PassengerPlane;
 import by.training.task3.airline.entity.TransportPlane;
+import org.junit.Before;
 import org.junit.Test;
 
 import static by.training.task3.airline.enums.PassengerPlaneTypes.ECONOMY;
@@ -12,13 +13,26 @@ import static org.junit.Assert.*;
 
 public class ComparatorByFlightDistanceTest {
 
-    private ComparatorByFlightDistance comparator = new ComparatorByFlightDistance();
+    private ComparatorByFlightDistance comparator;
+    private PassengerPlane planeOne;
+    private TransportPlane planeTwo;
+
+    @Before
+    public void initialize() {
+        comparator = new ComparatorByFlightDistance();
+        planeOne = new PassengerPlane(1, PASSENGER, 100, 3400, 900, 2500, 5, ECONOMY);
+        planeTwo = new TransportPlane(2, TRANSPORT, 2, 5000, 950, 2000, 3.6, MILITARY);
+    }
 
     @Test
-    public void compare() {
-        TransportPlane p1 = new TransportPlane(1, TRANSPORT, 2, 5000, 950, 2500, 3.6, MILITARY);
-        PassengerPlane p2 = new PassengerPlane(2, PASSENGER, 100, 3400, 900, 2000, 5, ECONOMY);
+    public void testCompareForEquals() {
         int expected = 1;
-        assertEquals(expected, comparator.compare(p1, p2));
+        assertEquals(expected, comparator.compare(planeOne, planeTwo));
+    }
+
+    @Test
+    public void testCompareForNotEquals() {
+        int expected = -1;
+        assertNotEquals(expected, comparator.compare(planeOne, planeTwo));
     }
 }

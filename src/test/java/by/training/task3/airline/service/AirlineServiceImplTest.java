@@ -1,10 +1,10 @@
-package by.training.task3.airline.service.impl;
+package by.training.task3.airline.service;
 
 import by.training.task3.airline.entity.PassengerPlane;
 import by.training.task3.airline.entity.Plane;
 
 import by.training.task3.airline.entity.TransportPlane;
-import by.training.task3.airline.service.AirlineService;
+import by.training.task3.airline.service.impl.AirlineServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ public class AirlineServiceImplTest {
     private ArrayList<Plane> listOfAirlinePlanes = new ArrayList<>();
 
     @Before
-    public void initializeExpectedArrayListOfPlanes() {
+    public void testInitializeExpectedArrayListOfPlanes() {
         listOfAirlinePlanes.add(new PassengerPlane(1, PASSENGER, 100, 3400, 900, 2000, 5, ECONOMY));
         listOfAirlinePlanes.add(new TransportPlane(2, TRANSPORT, 2, 5000, 950, 2500, 3.6, MILITARY));
         listOfAirlinePlanes.add(new PassengerPlane(3, PASSENGER, 80, 3470, 970, 2600, 5, BUSINESS));
@@ -36,12 +36,12 @@ public class AirlineServiceImplTest {
     }
 
     @Test
-    public void getAllPlanes() {
+    public void testGetAllPlanes() {
         assertEquals(listOfAirlinePlanes, airlineService.getAllPlanes());
     }
 
     @Test
-    public void getPlaneById() {
+    public void testGetPlaneById() {
         ArrayList<Plane> expectedList = new ArrayList<>();
         expectedList.add(listOfAirlinePlanes.get(4));
         assertEquals(expectedList, airlineService.getPlaneById(6));
@@ -49,7 +49,7 @@ public class AirlineServiceImplTest {
     }
 
     @Test
-    public void getPlaneFromPassengerCapacityRange() {
+    public void testGetPlaneFromPassengerCapacityRange() {
         ArrayList<Plane> expectedList = new ArrayList<>();
         expectedList.add(listOfAirlinePlanes.get(2));
         expectedList.add(listOfAirlinePlanes.get(4));
@@ -58,7 +58,7 @@ public class AirlineServiceImplTest {
     }
 
     @Test
-    public void findPlaneWithMaxSpeed() {
+    public void testFindPlaneWithMaxSpeed() {
         ArrayList<Plane> expectedList = new ArrayList<>();
         expectedList.add(listOfAirlinePlanes.get(4));
         expectedList.add(listOfAirlinePlanes.get(6));
@@ -68,7 +68,7 @@ public class AirlineServiceImplTest {
     }
 
     @Test
-    public void sortByFlightDistance() {
+    public void testSortByFlightDistance() {
         ArrayList<Plane> expectedList = new ArrayList<>();
         expectedList.add(listOfAirlinePlanes.get(0));
         expectedList.add(listOfAirlinePlanes.get(5));
@@ -84,7 +84,7 @@ public class AirlineServiceImplTest {
     }
 
     @Test
-    public void sortByFlightDistanceAndTypeOfPlane() {
+    public void testSortByFlightDistanceAndTypeOfPlane() {
         ArrayList<Plane> expectedList = new ArrayList<>();
         expectedList.add(listOfAirlinePlanes.get(0));
         expectedList.add(listOfAirlinePlanes.get(7));
@@ -100,12 +100,12 @@ public class AirlineServiceImplTest {
     }
 
     @Test
-    public void sumAllTakeoffWeight() {
+    public void testSumAllTakeoffWeight() {
         assertEquals(38385.0, airlineService.sumAllTakeoffWeight(), 0.000001);
     }
 
     @Test
-    public void sumAllPassengerCapacity() {
+    public void testSumAllPassengerCapacity() {
         assertEquals(665, airlineService.sumAllPassengerCapacity());
     }
 }

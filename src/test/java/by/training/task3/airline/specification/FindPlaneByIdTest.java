@@ -1,29 +1,26 @@
-package by.training.task3.airline.specification.impl;
+package by.training.task3.airline.specification;
+
 
 import by.training.task3.airline.entity.PassengerPlane;
 import by.training.task3.airline.entity.Plane;
 import by.training.task3.airline.entity.TransportPlane;
+import by.training.task3.airline.specification.impl.FindPlaneById;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static by.training.task3.airline.enums.PassengerPlaneTypes.BUSINESS;
-import static by.training.task3.airline.enums.PassengerPlaneTypes.ECONOMY;
+import static by.training.task3.airline.enums.PassengerPlaneTypes.*;
 import static by.training.task3.airline.enums.PlaneTypes.PASSENGER;
 import static by.training.task3.airline.enums.PlaneTypes.TRANSPORT;
-import static by.training.task3.airline.enums.TransportPlaneTypes.CIVILIAN;
-import static by.training.task3.airline.enums.TransportPlaneTypes.MILITARY;
+import static by.training.task3.airline.enums.TransportPlaneTypes.*;
 import static org.junit.Assert.*;
 
-public class FindPlaneFromPassengerCapacityIntervalTest {
-
+public class FindPlaneByIdTest {
     private ArrayList<Plane> listOfPlanes = new ArrayList<>();
 
-    private FindPlaneFromPassengerCapacityInterval findPlaneFromPassengerCapacityInterval;
-
     @Before
-    public void initializeExpectedArrayListOfPlanes() {
+    public void testInitializeExpectedArrayListOfPlanes() {
         listOfPlanes.add(new PassengerPlane(1, PASSENGER, 100, 3400, 900, 2000, 5, ECONOMY));
         listOfPlanes.add(new TransportPlane(2, TRANSPORT, 2, 5000, 950, 2500, 3.6, MILITARY));
         listOfPlanes.add(new PassengerPlane(3, PASSENGER, 80, 3470, 970, 2600, 5, BUSINESS));
@@ -31,13 +28,10 @@ public class FindPlaneFromPassengerCapacityIntervalTest {
     }
 
     @Test
-    public void specified() {
+    public void testSpecified() {
         ArrayList<Plane> expectedList = new ArrayList<>();
-        expectedList.add(listOfPlanes.get(1));
-        expectedList.add(listOfPlanes.get(3));
-        findPlaneFromPassengerCapacityInterval =
-                new FindPlaneFromPassengerCapacityInterval(0, 5);
-        assertEquals(expectedList,
-                findPlaneFromPassengerCapacityInterval.specified(listOfPlanes));
+        expectedList.add(listOfPlanes.get(2));
+        FindPlaneById findPlaneById = new FindPlaneById(3);
+        assertEquals(expectedList, findPlaneById.specified(listOfPlanes));
     }
 }

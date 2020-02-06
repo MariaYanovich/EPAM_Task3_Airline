@@ -1,8 +1,9 @@
-package by.training.task3.airline.specification.impl;
+package by.training.task3.airline.specification;
 
 import by.training.task3.airline.entity.PassengerPlane;
 import by.training.task3.airline.entity.Plane;
 import by.training.task3.airline.entity.TransportPlane;
+import by.training.task3.airline.specification.impl.FindPlaneWithMaxSpeed;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,10 +20,10 @@ import static org.junit.Assert.*;
 public class FindPlaneWithMaxSpeedTest {
     private ArrayList<Plane> listOfPlanes = new ArrayList<>();
 
-    private FindPlaneWithMaxSpeed findPlaneWithMaxSpeed = new FindPlaneWithMaxSpeed();
+     private FindPlaneWithMaxSpeed findPlaneWithMaxSpeed = new FindPlaneWithMaxSpeed();
 
     @Before
-    public void initializeExpectedArrayListOfPlanes() {
+    public void testInitializeExpectedArrayListOfPlanes() {
         listOfPlanes.add(new PassengerPlane(1, PASSENGER, 100, 3400, 900, 2000, 5, ECONOMY));
         listOfPlanes.add(new TransportPlane(2, TRANSPORT, 2, 5000, 950, 2500, 3.6, MILITARY));
         listOfPlanes.add(new PassengerPlane(3, PASSENGER, 80, 3470, 970, 2600, 5, BUSINESS));
@@ -30,7 +31,7 @@ public class FindPlaneWithMaxSpeedTest {
     }
 
     @Test
-    public void specified() {
+    public void testSpecified() {
         ArrayList<Plane> expectedList = new ArrayList<>();
         expectedList.add(listOfPlanes.get(2));
         assertEquals(expectedList, findPlaneWithMaxSpeed.specified(listOfPlanes));
