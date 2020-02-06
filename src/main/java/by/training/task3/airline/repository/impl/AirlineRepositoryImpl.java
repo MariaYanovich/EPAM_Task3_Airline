@@ -7,7 +7,6 @@ import by.training.task3.airline.reader.ReaderOfPlanesFromTxtFile;
 
 import by.training.task3.airline.repository.AirlineRepository;
 import by.training.task3.airline.specification.PlaneSpecification;
-import by.training.task3.airline.specification.impl.FindPlaneById;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
