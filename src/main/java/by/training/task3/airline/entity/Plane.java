@@ -6,12 +6,6 @@ import java.util.Objects;
 
 public abstract class Plane {
 
-    protected static final int DEFAULT_ID = 0;
-    protected static final int DEFAULT_PASSENGER_CAPACITY = 2;
-    protected static final double DEFAULT_TAKEOFF_WEIGHT = 4700;
-    protected static final double DEFAULT_SPEED = 900;
-    protected static final double DEFAULT_FLIGHT_DISTANCE = 1015;
-
     protected int id;
     protected int passengerCapacity;
     protected double takeoffWeight;
@@ -20,11 +14,6 @@ public abstract class Plane {
     protected PlaneTypes typeOfPlane;
 
     public Plane() {
-        this.id = DEFAULT_ID;
-        this.passengerCapacity = DEFAULT_PASSENGER_CAPACITY;
-        this.takeoffWeight = DEFAULT_TAKEOFF_WEIGHT;
-        this.speed = DEFAULT_SPEED;
-        this.flightDistance = DEFAULT_FLIGHT_DISTANCE;
     }
 
     public Plane(int id, PlaneTypes typeOfPlane, int passengerCapacity, double takeoffWeight,

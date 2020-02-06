@@ -20,11 +20,11 @@ public class PlaneFactory {
             try {
                 switch (PlaneTypes.valueOf(arr[1])) {
                     case PASSENGER:
-                        LOGGER.debug("Create passenger plane");
+                        LOGGER.debug("Start creating passenger plane..");
                         plane = initializePassengerPlane(arr);
                         break;
                     case TRANSPORT:
-                        LOGGER.debug("Create transport plane");
+                        LOGGER.debug("Start creating transport plane..");
                         plane = initializeTransportPlane(arr);
                         break;
                 }

@@ -29,11 +29,9 @@ public class FindPlaneFromPassengerCapacityInterval implements PlaneSpecificatio
                 listToReturn.add(plane);
             }
         }
-        if (!listToReturn.isEmpty()) {
-            LOGGER.debug("Find plane in interval is successful");
-        } else {
-            LOGGER.debug("Find plane in interval isn't successful");
-        }
+
+        LOGGER.debug("Find plane in interval is ended: "+ listToReturn);
+
         return listToReturn;
     }
 }

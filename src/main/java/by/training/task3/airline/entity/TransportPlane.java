@@ -7,16 +7,11 @@ import java.util.Objects;
 
 public class TransportPlane extends Plane {
 
-    private static final double DEFAULT_VOLUME_OF_CONTAINER = 3.4;
-
     private double volumeOfContainer;
     private TransportPlaneTypes typeOfTransportPlane;
 
     public TransportPlane() {
-        super();
         super.typeOfPlane = PlaneTypes.TRANSPORT;
-        this.volumeOfContainer = DEFAULT_VOLUME_OF_CONTAINER;
-        this.typeOfTransportPlane = TransportPlaneTypes.CARGO;
     }
 
 

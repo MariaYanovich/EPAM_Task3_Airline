@@ -12,13 +12,12 @@ public interface AirlineRepository {
 
     void updatePlane(Plane oldPlane, Plane newPlane);
 
-    ArrayList<Plane> getAllPlanes();
+    ArrayList<Plane> getAllPlanesOfAirline();
 
     ArrayList<Plane> query(PlaneSpecification specification);
 
     int sumAllPassengerCapacity();
 
     double sumAllTakeoffWeight();
-
 
 }

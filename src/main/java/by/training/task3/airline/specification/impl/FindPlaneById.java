@@ -25,11 +25,7 @@ public class FindPlaneById implements PlaneSpecification {
                 listToReturn.add(plane);
             }
         }
-        if (!listToReturn.isEmpty()) {
-            LOGGER.debug("Find plane by id is successful");
-        } else {
-            LOGGER.debug("Find plane by id isn't successful");
-        }
+        LOGGER.debug("Find plane by id is ended: " + listToReturn);
         return listToReturn;
     }
 }

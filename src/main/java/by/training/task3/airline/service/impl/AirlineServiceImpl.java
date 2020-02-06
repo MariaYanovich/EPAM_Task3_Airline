@@ -26,7 +26,7 @@ public class AirlineServiceImpl implements AirlineService {
     }
 
     public ArrayList<Plane> getAllPlanes() {
-        return repository.getAllPlanes();
+        return repository.getAllPlanesOfAirline();
     }
 
     @Override
@@ -61,7 +61,7 @@ public class AirlineServiceImpl implements AirlineService {
     @Override
     public String toString() {
         String str = "";
-        for (Plane s : repository.getAllPlanes()) {
+        for (Plane s : repository.getAllPlanesOfAirline()) {
             str = str.concat(s.toString()).concat("\n");
         }
         return "AirlineServiceImpl{" +

@@ -7,16 +7,12 @@ import java.util.Objects;
 
 public class PassengerPlane extends Plane {
 
-    private static final int DEFAULT_NUMBER_OF_STEWARDS = 6;
 
     private int numberOfStewards;
     private PassengerPlaneTypes typeOfPassengerPlane;
 
     public PassengerPlane() {
-        super();
         super.typeOfPlane = PlaneTypes.PASSENGER;
-        this.numberOfStewards = DEFAULT_NUMBER_OF_STEWARDS;
-        this.typeOfPassengerPlane = PassengerPlaneTypes.ECONOMY;
     }
 
     public PassengerPlane(int id, PlaneTypes typeOfPlane,

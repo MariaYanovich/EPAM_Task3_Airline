@@ -20,13 +20,7 @@ public class SortByFlightDistanceAndTypeOfPlane implements PlaneSpecification {
                 new ComparatorByTypeOfPlane());
         ArrayList<Plane> listToReturn = new ArrayList<>(planesOfRepository);
         listToReturn.sort(planeComparator);
-//        String str = "";
-//        for (Plane s : listToReturn) {
-//            str = str.concat(s.toString()).concat("\n");
-//        }
-//
-//        LOGGER.debug("Result of sort: \n" + str);
-        LOGGER.debug("Result of sort:" + listToReturn);
+        LOGGER.debug("Result of sort: " + listToReturn);
         return listToReturn;
     }
 }
