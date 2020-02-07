@@ -50,7 +50,7 @@ public class AirlineServiceImpl implements AirlineService {
             idList.add(plane.getId());
             LOGGER.debug("Add to repository: " + plane);
         } else {
-            LOGGER.error("Didn't add this plane information to repository" + plane);
+            LOGGER.error("Didn't add this plane information to repository");
         }
     }
 
